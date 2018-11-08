@@ -1,0 +1,15 @@
+---
+- name: Test Ansible Modules
+  hosts: localhost
+  gather_facts: False
+  
+  tasks:
+  
+  - name: Read static route table within document
+    doctable_to_facts:
+      src: test_document.docx
+      name: '{{ item.name }}'
+      headers: '{{ item.headers }}'
+    with_items: 
+      - name: routes
+        headers: ['Destination', 'NextHop']
