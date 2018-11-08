@@ -17,9 +17,12 @@ short_description: Read and parse specific tables within a .docx file and output
 
 description:
     - Read and parse specific tables within a .docx file and output Ansible facts.
+    - Ansible facts are created in the form of a list with each element in the list
+      a dictionary. The table column header is used as the key and the contents of
+      the cell used as the value. A dictionary is created for each table parsed.
     
 requirements:
-    - python-docs can be obtained from PyPi (https://pypi.org/project/python-docx)
+    - python-docx can be obtained from PyPi (https://pypi.org/project/python-docx)
 
 options:
     src:
